@@ -1,0 +1,77 @@
+﻿@model PendaftaranPasien.Models.AddPasienViewModel
+
+@{
+}
+<h2>Isi Data Pasien</h2>
+@if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Message"]
+        </div>
+    }
+<form method="post" action="Add" class="mt-6">
+     <div class="mb-3">
+    <label class="form-label" required>Jenis Pasien</label>
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" asp-for="JenisPasien">
+        <option selected></option>
+        <option value="Pasien Lama">Pasien Lama</option>
+        <option value="Pasien Baru">Pasien Baru</option>
+        </select>
+        </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Nama</label>
+        <input type="text" class="form-control" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Kelamin</label>
+        <input type="text" class="form-control" asp-for="Kelamin">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Telpon</label>
+        <input type="number" class="form-control" asp-for="Telpon">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Agama</label>
+        <input type="text" class="form-control" asp-for="Agama">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Pilih Metode Pembayaran</label>
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" asp-for="MetodePembayaran">
+            <option selected></option>
+            <option value="Pribadi">Pribadi</option>
+            <option value="Asuransi">Asuransi</option>
+            <option value="BPJS">BPJS</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Pilih Poli</label>
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" asp-for="poli">
+            <option selected></option>
+            <option value="Poli Umum">Poli Umum</option>
+            <option value="Poli Spesialis">Poli Spesialis</option>
+            <option value="Poli Gigi">Poli Gigi</option>
+            <option value="Poli THT">Poli THT</option>
+            <option value="Poli Paru">Poli Paru</option>
+            <option value="Poli Kulit">Poli Kulit</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Pilih Dokter</label>
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" asp-for="Dokter">
+            <option selected></option>
+            <option value="Dr. Bramantyo, S.Ked">Dr. Bramantyo, S.Ked (Poli Umum)</option>
+            <option value="Dr. Annisa, S.Ked">Dr. Annisa, S.Ked (Poli Umum)</option>
+            <option value="Drg. Eko Haryati, Sp.Pros">Drg. Eko Haryati, Sp.Pros (Poli Gigi)</option>
+            <option value="Dr. Supriyadi, Sp. P">Dr. Supriyadi, Sp. P (Poli Paru)</option>
+            <option value="Dr. Samuel, Sp.KK">Dr. Samuel, Sp.KK (Poli Kulit)</option>
+            <option value="Dr. Ignasia Delinda, Sp.THT">Dr. Ignasia Delinda, Sp.THT (Poli THT)</option>
+            <option value="Dr. Arafiq Arahman, Sp.THT">Dr. Arafiq Arahman, Sp.THT (Poli THT)</option>
+            <option value="Dr. Alifia Rifky, Sp.Ked">Dr. Alifia Rifky, Sp.Ked (Poli Umum)</option>
+            <option value="Drg. Michelle Kalumata, Sp.Pros">Drg. Michelle Kalumata, Sp.Pros (Poli Gigi)</option>
+        </select>
+        </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    
+
+</form>
